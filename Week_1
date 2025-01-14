@@ -23,3 +23,21 @@ print(num1 + num2)
 print(type(num1),type(num2))
 print("first no:",str(num1))
 print("second no:",str(num2))
+
+------------------------------------------------------------------------------------
+
+# To print on the same line use the end function in print()
+print("Hello World!",end=",")
+print("Hello World2",end=",")
+
+------------------------------------------------------------------------------------
+
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+# Main function to run
+if __name__ == '__main__':
+    print_hi('PyCharm')
