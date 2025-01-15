@@ -1,0 +1,18 @@
+def Calc_Temp(mode, temp):
+    temp_celsius = ""
+    temp_fahrenheit = ""
+    temp_kelvin = ""
+    
+    if mode == 1:
+        temp_celsius = temp
+        temp_fahrenheit = (temp * (9/5)) + 32
+        temp_kelvin = temp + 273.15
+    
+    
+    
+    return print(mode, temp, temp_celsius, temp_fahrenheit, temp_kelvin)
+    
+input_system = int(input("Enter which mode of Temperature:\n1 --> Celsius\n2 --> Fahrenheit\n3 --> Kelvin\n"))
+input_value = float(input("Enter the Temperature to convert:"))
+Calc_Temp(input_system, input_value)
+
