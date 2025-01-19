@@ -1,0 +1,59 @@
+
+def get_retail_purchase():
+    """Asks the user to enter information for a retail item purchase.
+    :param: user inputs on Description of Product, Number of Items purchased (int), unit price (float), and tax rate (float)
+    :return: description, quantity purchased, price per unit, and tax rate based on user inputs
+    """
+    description = input("Enter Retail Item Description: ")
+    num_items = int(input("Enter Quantity Purchased: "))
+    unit_price = float(input("Enter Price per Unit: "))
+    tax_rate = float(input("Enter Tax Rate: "))
+    return description, num_items, unit_price, tax_rate
+
+def calculate_subtotal(unit_price, num_items):
+    """calculates and returns the subtotal based on the product of the unit price and the quantity of items sold.
+    :param: price per unit (float) and number of items (int)
+    :return: subtotal (float)"""
+    subtotal = unit_price * num_items
+    return subtotal
+
+def calculate_tax(subtotal, tax_rate):
+    """calculates and returns the tax amount based on the product of the subtotal and the tax rate
+    :param: subtotal (float) and tax rate (float)
+    :return: tax amount (float)"""
+    tax = subtotal * tax_rate
+    return tax
+
+def calculate_total(subtotal, tax_rate):
+    """calculates and returns the total amount based on the product of the subtotal and the tax rate
+    :param: subtotal (float) and tax rate (float)
+    :return: total amount (float)"""
+    total = subtotal + (subtotal * tax_rate)
+    return total
+
+def display_sales_receipt(description, num_items, unit_price, tax_rate, subtotal, tax, total):
+    """displays and prints the receipt information of the sales transaction to the console
+    :param: item description, quantity of items (int), price per unit (float), tax rate (float), subtotal (float), tax amount (float), total amount (float)
+    :return: None (this function is used for displaying purposes)"""
+    stars = "*" * 20
+    print("\n%s\nSales Receipt\n%s" %(stars, stars))
+    print("Item Description:",description)
+    print("Number of Purchased Items:",num_items,"Qty")
+    print("Unit Price:",unit_price)
+    print("Tax Rate:",tax_rate,"%")
+    print("Subtotal:",subtotal)
+    print("Tax:",tax)
+    print("Total:",total)
+
+def main():
+    """main function as starting point to run the code for the computer to search
+    entry point of the program to start running
+    if __name__ == "__main__" for code to only be executed when a script is run directly"""
+    description, num_items, unit_price, tax_rate = get_retail_purchase()
+    subtotal = calculate_subtotal(unit_price, num_items)
+    tax = calculate_tax(subtotal, tax_rate)
+    total = calculate_total(subtotal, tax_rate)
+    display_sales_receipt(description, num_items, unit_price, tax_rate, subtotal, tax, total)
+
+if __name__ == "__main__":
+    main()
